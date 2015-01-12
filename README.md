@@ -9,7 +9,7 @@ Guess...Chess!
         ** visit: http://localhost:5000
 
     * Using tornado:
-        ** run: ./tornado-daemon
+        ** run: bin/tornado-daemon
         ** visit: http://localhost:5000
 
 # DESCRIPTION
