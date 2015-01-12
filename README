@@ -1,0 +1,8 @@
+Guess...Chess!
+
+Chuess shows a random chess position from a list of popular openings and variations
+
+TODO:
+
+-Keep track of which positions have been viewed by a user
+-Allow the user to run a quiz, which offers multiple choice answers
