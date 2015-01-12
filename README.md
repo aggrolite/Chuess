@@ -4,8 +4,13 @@ Guess...Chess!
 
 # SYNOPSIS
 
-    run: python chuess.py
-    visit: http://localhost:5000
+    * Using flask:
+        ** run: python chuess.py
+        ** visit: http://localhost:5000
+
+    * Using tornado:
+        ** run: ./tornado-daemon
+        ** visit: http://localhost:5000
 
 # DESCRIPTION
 
