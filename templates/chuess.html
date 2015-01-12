@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <meta charset="utf-8">
         <title>Chuess</title>
         <link rel="stylesheet" type="text/css" href="css/chessboard-0.3.0.min.css" />
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
@@ -28,5 +29,10 @@
     <body>
         <div id="board" style="width: 400px"></div>
         <span >refresh for a new position</span>
+        <ul>
+            {% for choice in choices %}
+                <li>{{ choice }}</li>
+            {% endfor %}
+        </ul>
     </body>
 </html>

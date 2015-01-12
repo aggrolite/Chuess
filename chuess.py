@@ -23,7 +23,7 @@ positions = {
     'french_defence': 'rnbqkbnr/pppp1ppp/4p3/8/4P3/8/PPPP1PPP/RNBQKBNR',
     'giuoco_piano': 'r1bqk1nr/pppp1ppp/2n5/2b1p3/2B1P3/5N2/PPPP1PPP/RNBQK2R',
     'queens_pawn_opening': 'rnbqkbnr/pppppppp/8/8/3P4/8/PPP1PPPP/RNBQKBNR',
-    'gr�nfeld_defence': 'rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR',
+    'grünfeld': 'rnbqkb1r/ppp1pp1p/5np1/3p4/2PP4/2N5/PP2PPPP/R1BQKBNR',
     'alekhines_defence': 'rnbqkb1r/pppppppp/5n2/8/4P3/8/PPPP1PPP/RNBQKBNR',
     'old_indian_defence': 'rnbqkb1r/ppp1pppp/3p1n2/8/2PP4/8/PP2PPPP/RNBQKBNR',
     'english_opening': 'rnbqkbnr/pppppppp/8/8/2P5/8/PP1PPPPP/RNBQKBNR',
@@ -41,7 +41,20 @@ positions = {
 @app.route("/")
 def hello():
 
-    return render_template('chuess.html', pos=positions[ random.choice( positions.keys() ) ] )
+    # pull out the keys for positions dictionary
+    keys = positions.keys()
+
+    # this is the answer
+    answer = random.choice( keys )
+    app.logger.debug(answer + ' has been chosen as the answer')
+
+    # provide multiple-choice answers which do not match the answer
+    choices = map ( lambda x: unicode(x, 'utf-8'), random.sample( filter(lambda y: y != answer, keys ), 3) )
+    choices.append(unicode(answer, 'utf-8'))
+
+
+    app.logger.debug(choices)
+    return render_template('chuess.html', pos=positions[ answer ], choices=choices, answer=answer)
 
 app.secret_key = urandom(24)
 app.logger.debug(app.secret_key)
