@@ -1,17 +1,19 @@
 Guess...Chess!
 
-Chuess shows a random chess position from a list of popular openings and variations.
+Chuess shows a random chess position from a list of popular openings and variations.  Can you guess them all?
 
 Chuess uses chessboard.js and Flask
 
-Note:
+Chuess has a handy script to scrape all FEN records from wikibooks
 
-update-fen will scrape FEN positions from wikibooks
+WHY:
+
+Poorly I chuess.  Improve I hope.
 
 TODO:
 
 -Keep track of which positions have been viewed by a user
--Allow the user to run a quiz, which offers multiple choice answers
+-Allow the user to run a quiz, which offers multiple choice answers and records a score
 
 LICENSE:
 
