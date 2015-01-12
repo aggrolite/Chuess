@@ -41,7 +41,7 @@ positions = {
 @app.route("/")
 def hello():
 
-    return render_template('guess.html', pos=positions[ random.choice( positions.keys() ) ] )
+    return render_template('chuess.html', pos=positions[ random.choice( positions.keys() ) ] )
 
 app.secret_key = urandom(24)
 app.logger.debug(app.secret_key)
