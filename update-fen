@@ -1,0 +1,44 @@
+#!/usr/bin/env perl -w
+
+use v5.12;
+
+use LWP::Simple qw(get);
+use HTML::TreeBuilder::XPath;
+
+my $tree = HTML::TreeBuilder::XPath->new_from_content(
+    get('https://en.wikibooks.org/wiki/Chess_Opening_Theory'));
+
+my @links = $tree->findvalues(
+    './/h3[.//*[@id="Encyclopaedia_of_Chess_Openings"]]
+       /following-sibling::dl[1]//a[@class="mw-redirect" and @title=~/^Chess\//]
+       /@href'
+);
+
+my %openings;
+
+for my $link (@links) {
+    my $c = get("https://en.wikibooks.org$link");
+    $tree = HTML::TreeBuilder::XPath->new_from_content($c);
+
+    my ($name) = map lc($_), $tree->findvalues('.//h1/span[@class="mw-headline"]') or next;
+    my ($fen) = $tree->findvalues(    #
+        './/table[@class="infobox"]
+          //div[@class="body"]
+          //span[text()=~/^[^\/]+\//]'
+    ) or next;
+
+    $name =~ s/'//g;
+    $name =~ s/ /_/g;
+
+    $openings{$name} = $fen;
+}
+
+my $i;
+my @keys = keys %openings;
+say 'positions = {';
+for my $key (@keys) {
+    $i++;
+    print q@    '@ . $key . q@': '@ . $openings{$key} . q@'@;
+    print $i < @keys ? ",\n" : "\n";
+}
+say '}'
