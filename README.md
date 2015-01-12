@@ -17,8 +17,8 @@ Poorly I chuess.  Improve I hope.
 
 # TODO
 
--Keep track of which positions have been viewed by a user
--Allow the user to run a quiz, which offers multiple choice answers and records a score
+* Keep track of which positions have been viewed by a user
+* Allow the user to run a quiz, which offers multiple choice answers and records a score
 
 # AUTHOR
 
