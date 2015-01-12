@@ -1,6 +1,8 @@
 Guess...Chess!
 
-Chuess shows a random chess position from a list of popular openings and variations
+Chuess shows a random chess position from a list of popular openings and variations.
+
+Chuess uses chessboard.js and Flask
 
 Note:
 
