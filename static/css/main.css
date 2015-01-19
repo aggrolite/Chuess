@@ -1,0 +1,16 @@
+body {
+	font-family:'Lato', sans-serif;
+}
+
+h1 {
+	font-weight:900;
+	font-size:2.250em;
+}
+
+#board {
+	width:25.000em;
+}
+
+ul li {
+	text-transform: capitalize;
+}
