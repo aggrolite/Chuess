@@ -26,6 +26,7 @@ h1 {
 }
 
 span {
+	display:inline-block;
 	padding-bottom:1.500em;
 }
 
@@ -33,4 +34,5 @@ ul li {
 	text-transform: capitalize;
 	list-style: none;
 	text-align: center;
+	padding:3px 0;
 }
