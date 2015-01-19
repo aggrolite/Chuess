@@ -29,13 +29,15 @@
         </script>
     </head>
     <body>
-    	<h1>Chuess</h1>
-        <div id="board"></div>
-        <span>Refresh for a new position</span>
-        <ul>
-            {% for choice in choices %}
-                <li>{{ choice }}</li>
-            {% endfor %}
-        </ul>
+    	<section>
+	    	<h1>Chuess</h1>
+	        <div id="board"></div>
+	        <span>Refresh for a new position</span>
+	        <ul>
+	            {% for choice in choices %}
+	                <li>{{ choice }}</li>
+	            {% endfor %}
+	        </ul>
+        </section>
     </body>
 </html>
