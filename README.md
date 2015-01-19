@@ -24,6 +24,7 @@ Poorly I chuess.  Improve I hope.
 
 * Keep track of which positions have been viewed by a user
 * Allow the user to run a quiz, which offers multiple choice answers and records a score
+* Add more positions...maybe [pawn structures?](https://en.wikipedia.org/wiki/Pawn_structure)
 
 # AUTHOR
 
